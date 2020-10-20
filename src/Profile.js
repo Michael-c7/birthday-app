@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Profiles from './Profiles'
 function Profile() {
   return (
     <div className="profile">
