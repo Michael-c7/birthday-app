@@ -6,13 +6,14 @@ import Profiles from './Profiles';
 
 // list of birthdays
 function ProfileList() {
+    const [user, setUser] = React.useState(Profiles);
     return (
             <section className="profile">
                 <h1 className="profile__header">{Profiles.length} birthdays today</h1>
-                {Profiles.map((profile) => {
+                {user.map((profile) => {
                     return(<Profile key={profile.id} profile={profile}></Profile>)
                 })}
-                <button className="clear-btn">Clear All</button>
+                <button className="clear-btn" onClick={() => setUser([])}>Clear All</button>
             </section>
     );
 }
@@ -31,5 +32,5 @@ function Profile(props) {
     )
 }
 
-
+// render
 ReactDOM.render(<ProfileList/>, document.getElementById("root"));
